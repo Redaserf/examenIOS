@@ -16,7 +16,7 @@ class UsersViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         cvUsers.dataSource = self
         cvUsers.delegate = self
         print("hola estoy en users VC")
@@ -29,17 +29,58 @@ class UsersViewController: UIViewController, UICollectionViewDataSource, UIColle
         cvUsers.collectionViewLayout = layout
 
         fetchUsers()
+        
+
         // Do any additional setup after loading the view.
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
-
+        super.viewWillAppear(animated)
+        
+        let bbtnBack = UIBarButtonItem()
+        bbtnBack.title = "Atrás"
+        bbtnBack.tintColor = .white
+        ncTittle.backBarButtonItem = bbtnBack
+        //en la siguiente propiedad ira el boton para poder filtrar por genero o para restablever
+        
+        
+        let maleAction = UIAction(title: "Masculino", image: UIImage(named: "maleIcon")) { _ in
+            self.fetchUsers(gender: .male)
+        }
+        
+        let femaleAction = UIAction(title: "Femenino", image: UIImage(named: "femaleIcon")) { _ in
+            self.fetchUsers(gender: .female)
+        }
+        
+        let genderMenu = UIMenu(title: "Seleccionar Género", children: [maleAction, femaleAction])
+        
+        let bbtnRight = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease.circle"), menu: genderMenu)
+        
+        ncTittle.rightBarButtonItem = bbtnRight
+        
+        let bbtnLeft = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(reloadUsers))
+        
+        
+        bbtnLeft.tintColor = .systemBlue
+        
+        ncTittle.leftBarButtonItem = bbtnLeft
+        
     }
     
-    func fetchUsers() {
-        if let url = URL(string: "https://randomuser.me/api/?results=10") {
-            
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let user = sender as? User,
+           let vcUserDetail = segue.destination as? UserDetailViewController {
+            print("user sugue prepare", user.email)
+
+            vcUserDetail.user = user
+        }
+    }
+
+    
+    
+    func fetchUsers(gender: Gender = .Default) {
+        if let url = URL(string: "https://randomuser.me/api/?results=50&gender=\(gender.rawValue)") {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.timeoutInterval = 20
@@ -78,10 +119,10 @@ class UsersViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             task.resume()
             
-            if task.progress.isFinished || task.progress.isCancelled || task.state == .canceling || task.state == .suspended {
-                print("Se cancelo la tarea")
-                task.cancel()
-            }
+//            if task.progress.isFinished || task.progress.isCancelled || task.state == .canceling || task.state == .suspended {
+//                print("Se cancelo la tarea")
+//                task.cancel()
+//            }
 
         } else {
             print("La URL no es válida")
@@ -90,10 +131,13 @@ class UsersViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     
-    
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("User selected at: ", indexPath.row)
+        performSegue(withIdentifier: "ShowUserDetail", sender: users[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,17 +146,18 @@ class UsersViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         //buscamos el usuario q esta recorriendo la coleccion
         let user = users[indexPath.row]
-        
+
         //le mandamos el usuario para configurar la celda
         cell.setUpCell(user: user)
         
         return cell
     }
     
-    
-
-
-    /*
+    @objc func reloadUsers() {
+        print("reload users")
+        self.fetchUsers()
+    }
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

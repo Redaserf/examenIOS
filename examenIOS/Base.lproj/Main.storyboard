@@ -73,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genero: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzs-a0-aij">
-                                                    <rect key="frame" x="10" y="74.666666666666671" width="86" height="26.333333333333329"/>
+                                                    <rect key="frame" x="10" y="74.666666666666686" width="86" height="26.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="6YD-Te-ZM9"/>
                                                         <constraint firstAttribute="height" constant="26.329999999999998" id="cU4-jz-Oqq"/>
@@ -106,7 +106,6 @@
                                             <outlet property="lblEmail" destination="p1e-kS-6ZK" id="PdR-m3-ZIk"/>
                                             <outlet property="lblGender" destination="d8z-Sb-i3b" id="pQO-uN-LEE"/>
                                             <outlet property="lblName" destination="5ZP-Vm-y4p" id="q3k-rK-l1K"/>
-                                            <segue destination="Grq-wE-Udp" kind="show" id="0az-Ee-IYk"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,16 +126,17 @@
                     <connections>
                         <outlet property="cvUsers" destination="1ty-A0-Njq" id="TFw-KM-htQ"/>
                         <outlet property="ncTittle" destination="TWr-Xf-UjG" id="ZCg-sT-dwv"/>
+                        <segue destination="Grq-wE-Udp" kind="show" identifier="ShowUserDetail" id="rWb-b0-ORY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="195.52238805970148" y="-702.28832951945071"/>
         </scene>
-        <!--View Controller-->
+        <!--User Detail View Controller-->
         <scene sceneID="f41-d4-JAp">
             <objects>
-                <viewController id="Grq-wE-Udp" sceneMemberID="viewController">
+                <viewController id="Grq-wE-Udp" customClass="UserDetailViewController" customModule="examenIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6uA-a6-tQh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,12 +147,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdT-c7-rzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-726"/>
+            <point key="canvasLocation" x="1174.8091603053435" y="-726.05633802816908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pes-S2-RL9">
             <objects>
-                <navigationController id="rN2-Wm-s6e" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="flipHorizontal" id="rN2-Wm-s6e" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xna-Hq-dg7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M5l-XW-J3s">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>

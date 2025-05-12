@@ -15,29 +15,13 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-wu-Lu6">
-                                <rect key="frame" x="101" y="404" width="191" height="44.333333333333314"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="191" id="d7C-rb-Qtm"/>
-                                    <constraint firstAttribute="height" constant="44.329999999999998" id="fx9-gq-BsA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a3G-wu-Lu6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XM6-si-Yr6"/>
-                            <constraint firstItem="a3G-wu-Lu6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wOi-3q-I0R"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-376" y="404"/>
         </scene>
     </scenes>
     <resources>

@@ -48,7 +48,7 @@ struct Location: Decodable {
         state = try container.decode(String.self, forKey: .state)
         country = try container.decode(String.self, forKey: .country)
 
-        //Si viene como entero se parsea a String obligatoriamente si no se decodifica como string
+        //Si viene como entero se parsea a String obligatoriamente, si no se decodifica como string
         if let intPostcode = try? container.decode(Int.self, forKey: .postcode) {
             postcode = String(intPostcode)
         } else {
