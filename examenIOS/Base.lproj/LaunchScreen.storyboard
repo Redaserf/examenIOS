@@ -15,16 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDevelop.png" translatesAutoresizingMaskIntoConstraints="NO" id="rM2-IA-ZCw">
+                                <rect key="frame" x="76.666666666666686" y="306" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rM2-IA-ZCw" secondAttribute="height" multiplier="1:1" id="5eY-b9-b79"/>
+                                    <constraint firstAttribute="height" constant="240" id="gFE-PE-2qf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rM2-IA-ZCw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1CH-QU-Sgr"/>
+                            <constraint firstItem="rM2-IA-ZCw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="foV-68-tDl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-376" y="404"/>
+            <point key="canvasLocation" x="-376.3358778625954" y="403.52112676056339"/>
         </scene>
     </scenes>
     <resources>
+        <image name="logoDevelop.png" width="870" height="870"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

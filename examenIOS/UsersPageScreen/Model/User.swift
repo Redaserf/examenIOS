@@ -37,18 +37,14 @@ struct Location: Decodable {
     var country: String
     var postcode: String  // Siempre como String
 
-    enum CodingKeys: String, CodingKey {
-        case street, city, state, country, postcode
-    }
-
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
         street = try container.decode(Street.self, forKey: .street)
         city = try container.decode(String.self, forKey: .city)
         state = try container.decode(String.self, forKey: .state)
         country = try container.decode(String.self, forKey: .country)
 
-        //Si viene como entero se parsea a String obligatoriamente, si no se decodifica como string
+        //Si viene como entero se parsea a String obligatoriamente, si no, se decodifica como string
         if let intPostcode = try? container.decode(Int.self, forKey: .postcode) {
             postcode = String(intPostcode)
         } else {

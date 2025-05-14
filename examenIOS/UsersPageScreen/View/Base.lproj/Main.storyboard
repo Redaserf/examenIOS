@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rN2-Wm-s6e">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="UsersViewController" customModule="examenIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1ty-A0-Njq">
-                                <rect key="frame" x="0.0" y="162" width="393" height="573"/>
+                                <rect key="frame" x="0.0" y="168" width="402" height="589"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gck-5X-Fql">
                                     <size key="itemSize" width="399" height="106"/>
@@ -28,7 +28,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserCell" id="09G-qr-nCv" customClass="UserCollectionViewCell" customModule="examenIOS" customModuleProvider="target">
-                                        <rect key="frame" x="-3" y="0.0" width="399" height="106"/>
+                                        <rect key="frame" x="1.6666666666666667" y="0.0" width="399" height="106"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n0a-Hv-Gzd">
                                             <rect key="frame" x="0.0" y="0.0" width="399" height="106"/>
@@ -73,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genero: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzs-a0-aij">
-                                                    <rect key="frame" x="10" y="74.666666666666686" width="86" height="26.333333333333329"/>
+                                                    <rect key="frame" x="10" y="74.666666666666671" width="86" height="26.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="6YD-Te-ZM9"/>
                                                         <constraint firstAttribute="height" constant="26.329999999999998" id="cU4-jz-Oqq"/>
@@ -126,28 +126,11 @@
                     <connections>
                         <outlet property="cvUsers" destination="1ty-A0-Njq" id="TFw-KM-htQ"/>
                         <outlet property="ncTittle" destination="TWr-Xf-UjG" id="ZCg-sT-dwv"/>
-                        <segue destination="Grq-wE-Udp" kind="show" identifier="ShowUserDetail" id="rWb-b0-ORY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="195.52238805970148" y="-702.28832951945071"/>
-        </scene>
-        <!--User Detail View Controller-->
-        <scene sceneID="f41-d4-JAp">
-            <objects>
-                <viewController id="Grq-wE-Udp" customClass="UserDetailViewController" customModule="examenIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6uA-a6-tQh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="64K-sj-wx0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="o2D-o4-haR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdT-c7-rzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1174.8091603053435" y="-726.05633802816908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pes-S2-RL9">
@@ -155,7 +138,7 @@
                 <navigationController modalTransitionStyle="flipHorizontal" id="rN2-Wm-s6e" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xna-Hq-dg7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M5l-XW-J3s">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="124" width="402" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

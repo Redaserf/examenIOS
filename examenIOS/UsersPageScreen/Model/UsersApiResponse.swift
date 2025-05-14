@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ApiResponse: Decodable {
+struct UsersApiResponse: Decodable {
     var results: [User]
 }
 

@@ -21,5 +21,4 @@ class UserCollectionViewCell: UICollectionViewCell {
         lblGender.text = user.gender
         
     }
-    
 }

@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3D272E042DCEA5FF0065DD2F /* Exceptions for "examenIOS" folder in "examenIOS" target */ = {
+		3D94FD352DD2A5BA00FE0F42 /* Exceptions for "examenIOS" folder in "examenIOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,10 +21,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3D272DF42DCEA5FD0065DD2F /* examenIOS */ = {
+		3D94FD242DD2A5BA00FE0F42 /* examenIOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3D272E042DCEA5FF0065DD2F /* Exceptions for "examenIOS" folder in "examenIOS" target */,
+				3D94FD352DD2A5BA00FE0F42 /* Exceptions for "examenIOS" folder in "examenIOS" target */,
 			);
 			path = examenIOS;
 			sourceTree = "<group>";
@@ -45,7 +45,7 @@
 		3D272DE92DCEA5FD0065DD2F = {
 			isa = PBXGroup;
 			children = (
-				3D272DF42DCEA5FD0065DD2F /* examenIOS */,
+				3D94FD242DD2A5BA00FE0F42 /* examenIOS */,
 				3D272DF32DCEA5FD0065DD2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3D272DF42DCEA5FD0065DD2F /* examenIOS */,
+				3D94FD242DD2A5BA00FE0F42 /* examenIOS */,
 			);
 			name = examenIOS;
 			packageProductDependencies = (
