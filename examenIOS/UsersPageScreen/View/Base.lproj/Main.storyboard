@@ -34,77 +34,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="399" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhX-LB-yQq">
-                                                    <rect key="frame" x="10" y="5" width="100" height="26"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-kl-Whe">
+                                                    <rect key="frame" x="10" y="18" width="70" height="70"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="0ca-2N-dY5"/>
-                                                        <constraint firstAttribute="width" constant="100" id="XSg-xQ-o49"/>
+                                                        <constraint firstAttribute="width" secondItem="SMj-kl-Whe" secondAttribute="height" id="Jls-DW-mrX"/>
+                                                        <constraint firstAttribute="height" constant="70" id="ZbM-JO-Z1t"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5j-6d-BKI">
-                                                    <rect key="frame" x="10" y="40" width="70" height="26"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="femaleIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="cOH-3V-VMN">
+                                                    <rect key="frame" x="354" y="38" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="IiC-hl-goP"/>
-                                                        <constraint firstAttribute="width" constant="70" id="fg0-NA-lSi"/>
+                                                        <constraint firstAttribute="height" constant="30" id="GFf-KT-ui7"/>
+                                                        <constraint firstAttribute="width" secondItem="cOH-3V-VMN" secondAttribute="height" id="fQf-k8-ODs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email del usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p1e-kS-6ZK">
+                                                    <rect key="frame" x="95" y="68" width="249" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de tupu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Vm-y4p">
-                                                    <rect key="frame" x="115" y="8" width="279" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hugo Alexis Ramirez Villarreal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p1e-kS-6ZK">
-                                                    <rect key="frame" x="85" y="43" width="309" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de un apersona jijija" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8z-Sb-i3b">
-                                                    <rect key="frame" x="101" y="78" width="293" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genero: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzs-a0-aij">
-                                                    <rect key="frame" x="10" y="74.666666666666671" width="86" height="26.333333333333329"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="86" id="6YD-Te-ZM9"/>
-                                                        <constraint firstAttribute="height" constant="26.329999999999998" id="cU4-jz-Oqq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Vm-y4p">
+                                                    <rect key="frame" x="95" y="33" width="249" height="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="y5j-6d-BKI" firstAttribute="leading" secondItem="WhX-LB-yQq" secondAttribute="leading" id="6YK-gY-Y5w"/>
-                                                <constraint firstItem="d8z-Sb-i3b" firstAttribute="centerY" secondItem="Fzs-a0-aij" secondAttribute="centerY" id="9ef-qW-aYp"/>
-                                                <constraint firstAttribute="trailing" secondItem="d8z-Sb-i3b" secondAttribute="trailing" constant="5" id="Ahc-vb-ge3"/>
-                                                <constraint firstItem="WhX-LB-yQq" firstAttribute="leading" secondItem="n0a-Hv-Gzd" secondAttribute="leading" constant="10" id="BcN-40-OJ6"/>
-                                                <constraint firstItem="p1e-kS-6ZK" firstAttribute="centerY" secondItem="y5j-6d-BKI" secondAttribute="centerY" id="CuD-we-iNO"/>
-                                                <constraint firstItem="d8z-Sb-i3b" firstAttribute="leading" secondItem="Fzs-a0-aij" secondAttribute="trailing" constant="5" id="Dop-Pc-tLh"/>
-                                                <constraint firstItem="5ZP-Vm-y4p" firstAttribute="leading" secondItem="WhX-LB-yQq" secondAttribute="trailing" constant="5" id="Ies-Sy-bhA"/>
-                                                <constraint firstItem="y5j-6d-BKI" firstAttribute="centerY" secondItem="n0a-Hv-Gzd" secondAttribute="centerY" id="J6X-oR-7jM"/>
-                                                <constraint firstItem="WhX-LB-yQq" firstAttribute="top" secondItem="n0a-Hv-Gzd" secondAttribute="top" constant="5" id="Wfu-c6-3lx"/>
-                                                <constraint firstAttribute="trailing" secondItem="p1e-kS-6ZK" secondAttribute="trailing" constant="5" id="ZzG-06-BX9"/>
-                                                <constraint firstItem="p1e-kS-6ZK" firstAttribute="leading" secondItem="y5j-6d-BKI" secondAttribute="trailing" constant="5" id="bEV-Dw-g7i"/>
-                                                <constraint firstItem="Fzs-a0-aij" firstAttribute="leading" secondItem="WhX-LB-yQq" secondAttribute="leading" id="fl5-vg-0si"/>
-                                                <constraint firstAttribute="trailing" secondItem="5ZP-Vm-y4p" secondAttribute="trailing" constant="5" id="ooe-Fp-g75"/>
-                                                <constraint firstItem="5ZP-Vm-y4p" firstAttribute="centerY" secondItem="WhX-LB-yQq" secondAttribute="centerY" id="pWC-Rr-f1a"/>
-                                                <constraint firstAttribute="bottom" secondItem="Fzs-a0-aij" secondAttribute="bottom" constant="5" id="xES-4T-Nuu"/>
+                                                <constraint firstItem="5ZP-Vm-y4p" firstAttribute="centerY" secondItem="SMj-kl-Whe" secondAttribute="centerY" constant="-5" id="8bW-qj-KeI"/>
+                                                <constraint firstItem="SMj-kl-Whe" firstAttribute="centerY" secondItem="n0a-Hv-Gzd" secondAttribute="centerY" id="DPM-fs-ozm"/>
+                                                <constraint firstAttribute="trailing" secondItem="cOH-3V-VMN" secondAttribute="trailing" constant="15" id="IyF-F2-4Pv"/>
+                                                <constraint firstItem="p1e-kS-6ZK" firstAttribute="trailing" secondItem="5ZP-Vm-y4p" secondAttribute="trailing" id="W7y-uw-jTx"/>
+                                                <constraint firstItem="5ZP-Vm-y4p" firstAttribute="leading" secondItem="SMj-kl-Whe" secondAttribute="trailing" constant="15" id="bR2-Bt-imF"/>
+                                                <constraint firstItem="cOH-3V-VMN" firstAttribute="centerY" secondItem="n0a-Hv-Gzd" secondAttribute="centerY" id="cxE-29-aav"/>
+                                                <constraint firstItem="p1e-kS-6ZK" firstAttribute="top" secondItem="5ZP-Vm-y4p" secondAttribute="bottom" constant="5" id="jU0-gG-AXQ"/>
+                                                <constraint firstItem="cOH-3V-VMN" firstAttribute="leading" secondItem="5ZP-Vm-y4p" secondAttribute="trailing" constant="10" id="mYj-yE-44H"/>
+                                                <constraint firstItem="SMj-kl-Whe" firstAttribute="leading" secondItem="n0a-Hv-Gzd" secondAttribute="leading" constant="10" id="mnS-e8-SUY"/>
+                                                <constraint firstItem="p1e-kS-6ZK" firstAttribute="leading" secondItem="5ZP-Vm-y4p" secondAttribute="leading" id="xrj-si-0m9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="399" height="106"/>
                                         <connections>
+                                            <outlet property="imvGender" destination="cOH-3V-VMN" id="MTJ-cX-X3j"/>
+                                            <outlet property="imvPhoto" destination="SMj-kl-Whe" id="Xrb-QN-Lov"/>
                                             <outlet property="lblEmail" destination="p1e-kS-6ZK" id="PdR-m3-ZIk"/>
-                                            <outlet property="lblGender" destination="d8z-Sb-i3b" id="pQO-uN-LEE"/>
                                             <outlet property="lblName" destination="5ZP-Vm-y4p" id="q3k-rK-l1K"/>
                                         </connections>
                                     </collectionViewCell>
@@ -151,6 +125,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appImage.png" width="1024" height="1024"/>
+        <image name="femaleIcon.png" width="154.28572082519531" height="308.57144165039062"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

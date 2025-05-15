@@ -10,5 +10,5 @@ import Foundation
 
 protocol UsersDelegate: AnyObject {
     func didReceiveUsers(users: [User])
-    func didOccurError(error: Error)
+    func didOccurError(error: ApiError)
 }

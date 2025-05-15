@@ -9,7 +9,7 @@ import Foundation
 
 
 class UsersViewModel {
-    
+    	
     let service = ApiService.shared
     weak var delegate: UsersDelegate?
     var users: [User] = []

@@ -8,6 +8,6 @@
 import Foundation
 
 enum LocationCodingKeys: String, CodingKey {
-    case street, city, state, country, postcode
+    case street, city, state, country, postcode, coordinates
 }
 

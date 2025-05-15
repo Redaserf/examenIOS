@@ -36,6 +36,8 @@ struct Location: Decodable {
     var state: String
     var country: String
     var postcode: String  // Siempre como String
+    var coordinates: Coordinates
+    
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: LocationCodingKeys.self)
@@ -43,6 +45,7 @@ struct Location: Decodable {
         city = try container.decode(String.self, forKey: .city)
         state = try container.decode(String.self, forKey: .state)
         country = try container.decode(String.self, forKey: .country)
+        coordinates = try container.decode(Coordinates.self, forKey: .coordinates)
 
         //Si viene como entero se parsea a String obligatoriamente, si no, se decodifica como string
         if let intPostcode = try? container.decode(Int.self, forKey: .postcode) {
@@ -58,4 +61,9 @@ struct Location: Decodable {
 struct Street: Decodable {
     var number: Int
     var name: String
+}
+
+struct Coordinates: Decodable {
+    var latitude: String
+    var longitude: String
 }

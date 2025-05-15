@@ -10,8 +10,8 @@ import UIKit
 class UsersViewController: UIViewController {
     @IBOutlet weak var cvUsers: UICollectionView!
     @IBOutlet weak var ncTittle: UINavigationItem!
+    var alertLoadingUsers = UIAlertController(title: "", message: nil, preferredStyle: .alert)
     
-    let service = ApiService.shared
     let vmUsers = UsersViewModel()
     var users: [User] = []
     let storyboardDestiny = UIStoryboard(name: "UserDetail", bundle: nil)
@@ -25,19 +25,45 @@ class UsersViewController: UIViewController {
         cvUsers.dataSource = self
         cvUsers.delegate = self
         print("hola estoy en users VC")
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
-        layout.itemSize = CGSize(width: cvUsers.frame.width, height: 100)
-        
-        cvUsers.collectionViewLayout = layout
 
         //cargar usuarios
+
+        showLoadingAlert()
         vmUsers.fetchUsers()
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    func showLoadingAlert()
+    {
+        
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.startAnimating()
+        
+        alertLoadingUsers.view.addSubview(activityIndicator)
+           
+        alertLoadingUsers.view.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+
+        let centerX = activityIndicator.centerXAnchor.constraint(equalTo: alertLoadingUsers.view.centerXAnchor)
+        let centerY = activityIndicator.centerYAnchor.constraint(equalTo: alertLoadingUsers.view.centerYAnchor)
+
+        alertLoadingUsers.view.addConstraint(centerX)
+        alertLoadingUsers.view.addConstraint(centerY)
+        self.ncTittle.leftBarButtonItem?.isEnabled = false
+        self.ncTittle.rightBarButtonItem?.isEnabled = false
+        present(alertLoadingUsers, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.itemSize = CGSize(width: cvUsers.frame.width - 15, height: 100)
+        cvUsers.collectionViewLayout = layout
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,10 +77,12 @@ class UsersViewController: UIViewController {
         
         
         let maleAction = UIAction(title: "Masculino", image: UIImage(named: "maleIcon")) { _ in
+            self.showLoadingAlert()
             self.vmUsers.fetchUsers(gender: .male)
         }
         
         let femaleAction = UIAction(title: "Femenino", image: UIImage(named: "femaleIcon")) { _ in
+            self.showLoadingAlert()
             self.vmUsers.fetchUsers(gender: .female)
         }
         
@@ -85,6 +113,7 @@ class UsersViewController: UIViewController {
     
     @objc func reloadUsers() {
         print("reload users")
+        self.showLoadingAlert()
         self.vmUsers.fetchUsers()
     }
 /*
