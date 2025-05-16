@@ -11,7 +11,4 @@ import Foundation
 struct ApiError: Error {
     var message: String
     var code: Int
-    
-    
-    
 }

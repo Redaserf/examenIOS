@@ -23,17 +23,16 @@ class UserCollectionViewCell: UICollectionViewCell {
         loadImageFromSring()
         
         imvPhoto.layer.cornerRadius = imvPhoto.frame.width / 2
-//        imvPhoto.layer.borderWidth = 2
-//        imvPhoto.layer.borderColor = UIColor.black.cgColor
+
         self.layer.cornerRadius = 30
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.systemBlue.cgColor
         
         switch user.gender {
-        case "male":
-            imvGender.image = UIImage(named: "maleIcon")
-        default:
-            imvGender.image = UIImage(named: "femaleIcon")
+            case "male":
+                imvGender.image = UIImage(named: "maleIcon")
+            default:
+                imvGender.image = UIImage(named: "femaleIcon")
         }
         
     }

@@ -12,49 +12,27 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var ncTittle: UINavigationItem!
     var alertLoadingUsers = UIAlertController(title: "", message: nil, preferredStyle: .alert)
     
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    
     let vmUsers = UsersViewModel()
     var users: [User] = []
     let storyboardDestiny = UIStoryboard(name: "UserDetail", bundle: nil)
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //que las funciones delegate q pasen en el viewModel se ejecuten aqui
         vmUsers.delegate = self
                 
         cvUsers.dataSource = self
         cvUsers.delegate = self
-        print("hola estoy en users VC")
 
         //cargar usuarios
-
-        showLoadingAlert()
         vmUsers.fetchUsers()
+
 
 
         // Do any additional setup after loading the view.
     }
     
-    func showLoadingAlert()
-    {
-        
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.startAnimating()
-        
-        alertLoadingUsers.view.addSubview(activityIndicator)
-           
-        alertLoadingUsers.view.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-
-        let centerX = activityIndicator.centerXAnchor.constraint(equalTo: alertLoadingUsers.view.centerXAnchor)
-        let centerY = activityIndicator.centerYAnchor.constraint(equalTo: alertLoadingUsers.view.centerYAnchor)
-
-        alertLoadingUsers.view.addConstraint(centerX)
-        alertLoadingUsers.view.addConstraint(centerY)
-        self.ncTittle.leftBarButtonItem?.isEnabled = false
-        self.ncTittle.rightBarButtonItem?.isEnabled = false
-        present(alertLoadingUsers, animated: true)
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -77,12 +55,10 @@ class UsersViewController: UIViewController {
         
         
         let maleAction = UIAction(title: "Masculino", image: UIImage(named: "maleIcon")) { _ in
-            self.showLoadingAlert()
             self.vmUsers.fetchUsers(gender: .male)
         }
         
         let femaleAction = UIAction(title: "Femenino", image: UIImage(named: "femaleIcon")) { _ in
-            self.showLoadingAlert()
             self.vmUsers.fetchUsers(gender: .female)
         }
         
@@ -113,7 +89,6 @@ class UsersViewController: UIViewController {
     
     @objc func reloadUsers() {
         print("reload users")
-        self.showLoadingAlert()
         self.vmUsers.fetchUsers()
     }
 /*

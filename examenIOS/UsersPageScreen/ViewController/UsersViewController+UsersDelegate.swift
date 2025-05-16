@@ -10,19 +10,12 @@ import UIKit
 
 extension UsersViewController: UsersDelegate{
     
-    
     func didReceiveUsers(users: [User]) {
         print("se ejecuto el delegado de users")
         self.users = users
         cvUsers.reloadData()
         
-        alertLoadingUsers.dismiss(animated: true) {
-            self.ncTittle.leftBarButtonItem?.isEnabled = true
-            self.ncTittle.rightBarButtonItem?.isEnabled = true
-        }
-        //ocultar el lblError al cargar los usuarios por si ocurre el 429
-        
-        //si esta el label de error,si los botones del navigationController estan deshabilitados habilitar y quitar el label del error
+        //si esta el label de error loo oculta al cargar los usuarios correctamente
         if cvUsers.backgroundView != nil {
             cvUsers.backgroundView!.isHidden = true
         }
@@ -45,8 +38,7 @@ extension UsersViewController: UsersDelegate{
          lblError.clipsToBounds = true
         
         alertLoadingUsers.dismiss(animated: true) {
-            self.ncTittle.leftBarButtonItem?.isEnabled = true
-            self.ncTittle.rightBarButtonItem?.isEnabled = true
+            print("dismiss alert in errorOccur")
             self.cvUsers.backgroundView = lblError
             self.users = []
             self.cvUsers.reloadData()
@@ -58,18 +50,37 @@ extension UsersViewController: UsersDelegate{
             
             self.present(alert, animated: true)
         }
-        
-        
-        //si se hicieron demasiadas peticiones bloquesar bvar button dentro del nc
-//        if error.code == 429 {
-//            ncTittle.leftBarButtonItem?.isEnabled = false
-//            ncTittle.rightBarButtonItem?.isEnabled = false
-//        }
-        
-
     }
     
+    func showLoadingAlert() {
+        activityIndicator.startAnimating()
+        
+        
+        alertLoadingUsers.view.addSubview(activityIndicator)
+
+        let centerX = activityIndicator.centerXAnchor.constraint(equalTo: alertLoadingUsers.view.centerXAnchor)
+        let centerY = activityIndicator.centerYAnchor.constraint(equalTo: alertLoadingUsers.view.centerYAnchor)
+
+        alertLoadingUsers.view.addConstraint(centerX)
+        alertLoadingUsers.view.addConstraint(centerY)
+        
+        self.ncTittle.leftBarButtonItem?.isEnabled = false
+        self.ncTittle.rightBarButtonItem?.isEnabled = false
+        
+        present(alertLoadingUsers, animated: true)
+    }
     
+    func stopLoadingAlert() {
+        //dismiss the alert with the activity indicator
+        
+        alertLoadingUsers.dismiss(animated: true) {
+            print("dismiss alert in stopLoadingAlert")
+
+            self.activityIndicator.stopAnimating()
+            self.ncTittle.leftBarButtonItem?.isEnabled = true
+            self.ncTittle.rightBarButtonItem?.isEnabled = true
+        }
+    }
     
     
 }

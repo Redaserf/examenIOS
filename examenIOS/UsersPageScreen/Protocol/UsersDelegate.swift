@@ -11,4 +11,6 @@ import Foundation
 protocol UsersDelegate: AnyObject {
     func didReceiveUsers(users: [User])
     func didOccurError(error: ApiError)
+    func showLoadingAlert()
+    func stopLoadingAlert()
 }

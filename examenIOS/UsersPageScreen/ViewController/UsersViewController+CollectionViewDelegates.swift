@@ -23,15 +23,13 @@ extension UsersViewController: UICollectionViewDataSource, UICollectionViewDeleg
         vcUserDetail.user = users[indexPath.row]
         
         self.navigationController?.pushViewController(vcUserDetail, animated: true)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! UserCollectionViewCell
         
-        //CAMBIAR USERS POR USERS DEL VIEWMODEL
-        //buscamos el usuario q esta recorriendo la coleccion
+        //buscamos el usuario q esta recorriendo la colleccion
         let user = users[indexPath.row]
 
         //le mandamos el usuario para configurar la celda

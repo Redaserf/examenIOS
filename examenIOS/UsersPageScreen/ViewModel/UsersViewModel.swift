@@ -16,6 +16,7 @@ class UsersViewModel {
     
     
     func fetchUsers(gender: Gender = .Default){
+        delegate?.showLoadingAlert()
         service.getUsers(gender: gender, completion: { [weak self] result in
             DispatchQueue.main.async {
                 
@@ -24,17 +25,15 @@ class UsersViewModel {
                 
                 switch result {
                     case .success(let users):
-//                        self.users = users
                         self.delegate?.didReceiveUsers(users: users)
                     case .failure(let error):
                         print(error.localizedDescription)
                         self.delegate?.didOccurError(error: error)
-                    //manejon de errores (mostrar alerta, dibujar un texto de no se pudieron obtener los usuarios o algo asi)
                 }
+                print("this part continue executing")
+                self.delegate?.stopLoadingAlert()
             }
         })
-        
-        
     }
     
     

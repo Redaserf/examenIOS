@@ -8,14 +8,12 @@
 import Foundation
 
 struct User: Decodable {
-    
     var name: Name
     var email: String
     var gender: String
     var picture: Picture
     var location: Location
     var phone: String
-        
 }
 
 struct Name: Decodable {

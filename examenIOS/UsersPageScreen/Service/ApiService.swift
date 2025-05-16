@@ -14,7 +14,7 @@ class ApiService {
     
     
     func getUsers(gender: Gender = .Default, completion: @escaping(Result<[User], ApiError>) -> Void){
-        if let url = URL(string: "\(baseUrl)/?results=50&gender=\(gender.rawValue)") {
+        if let url = URL(string: "\(baseUrl)?results=50&gender=\(gender.rawValue)") {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.timeoutInterval = 20
@@ -76,7 +76,7 @@ class ApiService {
                             apiError.message = "Demasiadas peticiones, intente en unos momentos."
                             
                         default:
-                        apiError.message = error?.localizedDescription ?? apiError.message
+                            apiError.message = error?.localizedDescription ?? apiError.message
                     }
                     
                     completion(.failure(apiError))

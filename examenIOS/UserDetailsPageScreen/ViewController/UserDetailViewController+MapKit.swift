@@ -23,7 +23,6 @@ extension UserDetailViewController {
         print("latitude", latitude)
         print("longitude", longitude)
 
-        
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let zoom = MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
         
